@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Varsha · Portfolio</title>
+  <!-- Font Awesome (free icons) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Roboto, system-ui, sans-serif;
+    }
+
+    body {
+      background: #f8faff;
+      color: #1e1e2f;
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* ---------- HERO ---------- */
+    .hero {
+      background: linear-gradient(145deg, #f0f4ff 0%, #e6edfd 100%);
+      padding: 60px 0 40px;
+      border-bottom: 2px solid #d0d9f0;
+      text-align: center;
+    }
+
+    .hero-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .profile-img {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 6px solid white;
+      box-shadow: 0 12px 28px rgba(0, 20, 60, 0.15);
+      background: #fff;
+    }
+
+    .hero h1 {
+      font-size: 2.8rem;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      color: #0b1a3a;
+    }
+
+    .hero .badge {
+      background: #1f3a6b;
+      color: white;
+      padding: 8px 24px;
+      border-radius: 40px;
+      font-weight: 500;
+      font-size: 1.1rem;
+      display: inline-block;
+      box-shadow: 0 4px 10px rgba(0, 20, 50, 0.1);
+    }
+
+    .tagline {
+      font-size: 1.2rem;
+      max-width: 600px;
+      color: #1f2b4b;
+      font-weight: 400;
+    }
+
+    .links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 18px;
+      margin-top: 8px;
+    }
+
+    .links a {
+      background: white;
+      padding: 10px 22px;
+      border-radius: 40px;
+      font-weight: 500;
+      color: #0b1a3a;
+      text-decoration: none;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
+      border: 1px solid #ccd7f0;
+      transition: all 0.2s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.95rem;
+    }
+
+    .links a i {
+      font-size: 1.1rem;
+      color: #1f3a6b;
+    }
+
+    .links a:hover {
+      background: #1f3a6b;
+      color: white;
+      border-color: #1f3a6b;
+      transform: translateY(-3px);
+      box-shadow: 0 12px 24px rgba(26, 67, 142, 0.15);
+    }
+
+    .links a:hover i {
+      color: white;
+    }
+
+    /* ---------- SECTIONS ---------- */
+    section {
+      padding: 48px 0 32px;
+      border-bottom: 1px solid #e4eaf9;
+    }
+
+    section:last-of-type {
+      border-bottom: none;
+    }
+
+    .section-title {
+      font-size: 2rem;
+      font-weight: 600;
+      color: #0b1a3a;
+      margin-bottom: 28px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .section-title i {
+      color: #2a4b8a;
+      font-size: 1.8rem;
+    }
+
+    /* about */
+    .about-text {
+      font-size: 1.1rem;
+      max-width: 800px;
+      background: white;
+      padding: 28px 32px;
+      border-radius: 28px;
+      box-shadow: 0 6px 20px rgba(0, 20, 40, 0.04);
+      border: 1px solid #eef3fe;
+      line-height: 1.8;
+    }
+
+    /* skill grid */
+    .skill-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+      gap: 16px;
+    }
+
+    .skill-card {
+      background: white;
+      padding: 18px 12px;
+      border-radius: 24px;
+      text-align: center;
+      font-weight: 500;
+      border: 1px solid #e3ebfc;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.02);
+      transition: 0.2s;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .skill-card i {
+      font-size: 1.8rem;
+      color: #1f3a6b;
+    }
+
+    .skill-card:hover {
+      transform: scale(1.02);
+      border-color: #a7bce6;
+      background: #f9fcff;
+    }
+
+    /* categories */
+    .skill-category {
+      margin-top: 28px;
+    }
+
+    .skill-category h4 {
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: #1f2b4b;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .skill-category h4 i {
+      color: #2a4b8a;
+    }
+
+    .skill-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .skill-tag {
+      background: white;
+      padding: 8px 20px;
+      border-radius: 40px;
+      border: 1px solid #d8e2f7;
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: #14213d;
+    }
+
+    /* projects */
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 24px;
+    }
+
+    .project-card {
+      background: white;
+      padding: 24px 24px 28px;
+      border-radius: 28px;
+      border: 1px solid #e9effd;
+      box-shadow: 0 6px 18px rgba(0, 20, 40, 0.02);
+      transition: 0.25s ease;
+    }
+
+    .project-card:hover {
+      border-color: #b6caf0;
+      box-shadow: 0 12px 28px rgba(20, 50, 100, 0.06);
+      transform: translateY(-4px);
+    }
+
+    .project-card h3 {
+      font-size: 1.4rem;
+      font-weight: 600;
+      color: #0b1a3a;
+      margin-bottom: 8px;
+    }
+
+    .project-card .tech {
+      display: inline-block;
+      background: #eef3fe;
+      padding: 4px 16px;
+      border-radius: 40px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: #1f3a6b;
+      margin-bottom: 12px;
+    }
+
+    .project-card p {
+      color: #2a3457;
+      margin-bottom: 6px;
+    }
+
+    /* achievements */
+    .achievement-list {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+
+    .achievement-item {
+      background: white;
+      padding: 20px 28px;
+      border-radius: 24px;
+      border-left: 6px solid #1f3a6b;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
+      border: 1px solid #e8effd;
+      border-left-width: 8px;
+    }
+
+    .achievement-item strong {
+      color: #0b1a3a;
+      font-size: 1.1rem;
+    }
+
+    .achievement-item i {
+      color: #f4b942;
+      margin-right: 8px;
+    }
+
+    /* contact */
+    .contact-info {
+      background: white;
+      padding: 24px 32px;
+      border-radius: 40px;
+      display: inline-flex;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      border: 1px solid #e2ebfd;
+    }
+
+    .contact-info a {
+      color: #1f3a6b;
+      text-decoration: none;
+      font-weight: 500;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .contact-info a i {
+      font-size: 1.2rem;
+    }
+
+    /* responsive */
+    @media (max-width: 600px) {
+      .hero h1 {
+        font-size: 2.2rem;
+      }
+      .links a {
+        padding: 8px 16px;
+        font-size: 0.9rem;
+      }
+      .skill-grid {
+        grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container hero-content">
+      <!-- replace 'portfolioimg.jpg' with your actual image file -->
+      <img src="portfolioimg.jpg" alt="Varsha Vijayaragavan" class="profile-img" />
+      <h1>Varsha Vijayaragavan</h1>
+      <span class="badge"><i class="fas fa-graduation-cap" style="margin-right: 8px;"></i>Computer Science Engineering</span>
+      <p class="tagline">
+        <i class="fas fa-code" style="margin-right: 6px; color: #1f3a6b;"></i>
+        Java · DSA · Web · AI & IoT · building technology-driven solutions
+      </p>
+      <div class="links">
+        <a href="https://github.com/varsha01280" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+        <a href="https://www.linkedin.com/in/varsha-vijayaragavan-009707326/" target="_blank"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
+        <a href="#"><i class="fas fa-file-alt"></i> Resume</a>
+        <a href="mailto:varshavijayaragavan28@gmail.com"><i class="fas fa-envelope"></i> Email</a>
+      </div>
+    </div>
+  </section>
+
+  <div class="container">
+
+    <!-- ABOUT -->
+    <section>
+      <div class="section-title">
+        <i class="fas fa-user-astronaut"></i> About Me
+      </div>
+      <div class="about-text">
+        <p>
+          I am a Computer Science and Engineering student with a strong interest in software development,
+          problem-solving, and emerging technologies. I enjoy building practical solutions that combine
+          technology with real-world applications — especially in web development, AI, and IoT.
+        </p>
+        <p style="margin-top: 12px;">
+          Currently sharpening my skills in <strong>Java, Data Structures & Algorithms, and full-stack development</strong>
+          while preparing for technical interviews. I thrive on continuous learning and bring a creative,
+          solution-oriented mindset to every project.
+        </p>
+      </div>
+    </section>
+
+    <!-- SKILLS (expanded) -->
+    <section>
+      <div class="section-title">
+        <i class="fas fa-cogs"></i> Skills & Technologies
+      </div>
+
+      <!-- Programming Languages -->
+      <div class="skill-category">
+        <h4><i class="fas fa-terminal"></i> Programming Languages</h4>
+        <div class="skill-tags">
+          <span class="skill-tag">Java</span>
+          <span class="skill-tag">C</span>
+          <span class="skill-tag">JavaScript</span>
+        </div>
+      </div>
+
+      <!-- Web & DB -->
+      <div class="skill-category">
+        <h4><i class="fas fa-code"></i> Web & Database</h4>
+        <div class="skill-tags">
+          <span class="skill-tag">HTML</span>
+          <span class="skill-tag">CSS</span>
+          <span class="skill-tag">Bootstrap</span>
+          <span class="skill-tag">React (Basics)</span>
+          <span class="skill-tag">PHP</span>
+          <span class="skill-tag">MySQL</span>
+          <span class="skill-tag">MongoDB (Basics)</span>
+        </div>
+      </div>
+
+      <!-- Tools & Core -->
+      <div class="skill-category">
+        <h4><i class="fas fa-tools"></i> Tools & Core Concepts</h4>
+        <div class="skill-tags">
+          <span class="skill-tag">Git</span>
+          <span class="skill-tag">GitHub</span>
+          <span class="skill-tag">VS Code</span>
+          <span class="skill-tag">Google Colab</span>
+          <span class="skill-tag">DSA</span>
+          <span class="skill-tag">OOP</span>
+          <span class="skill-tag">DBMS</span>
+          <span class="skill-tag">Computer Networks</span>
+          <span class="skill-tag">Operating Systems</span>
+        </div>
+      </div>
+
+      <!-- DSA detailed -->
+      <div class="skill-category">
+        <h4><i class="fas fa-diagram-project"></i> Data Structures & Algorithms</h4>
+        <div class="skill-tags">
+          <span class="skill-tag">Arrays</span>
+          <span class="skill-tag">Strings</span>
+          <span class="skill-tag">HashMap</span>
+          <span class="skill-tag">HashSet</span>
+          <span class="skill-tag">Linked List</span>
+          <span class="skill-tag">Stack</span>
+          <span class="skill-tag">Queue</span>
+          <span class="skill-tag">Trees</span>
+          <span class="skill-tag">Graphs</span>
+          <span class="skill-tag">DP (Learning)</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section>
+      <div class="section-title">
+        <i class="fas fa-laptop-code"></i> Projects
+      </div>
+      <div class="project-grid">
+        <div class="project-card">
+          <h3>Smart Crop Advisor</h3>
+          <span class="tech"><i class="fas fa-leaf"></i> HTML · CSS · PHP · Sensors</span>
+          <p>Agriculture recommendation system providing fertilizer &amp; pesticide advice based on crop, soil, and environment.</p>
+        </div>
+        <div class="project-card">
+          <h3>Food Delivery Web App</h3>
+          <span class="tech"><i class="fas fa-utensils"></i> HTML · CSS · Bootstrap · JS</span>
+          <p>Swiggy-inspired responsive platform for browsing restaurants, menus, cart, and order placement.</p>
+        </div>
+        <div class="project-card">
+          <h3>AI Kolam Pattern Generator</h3>
+          <span class="tech"><i class="fas fa-paint-brush"></i> Python · Colab · GAN</span>
+          <p>AI-assisted tool preserving traditional Kolam art by generating alternative inner patterns while retaining outer structure.</p>
+        </div>
+        <div class="project-card">
+          <h3>Smart Water IoT System</h3>
+          <span class="tech"><i class="fas fa-water"></i> IoT · Sensors · Embedded</span>
+          <p>IoT-based monitoring system for efficient water usage and automated optimisation.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ACHIEVEMENTS -->
+    <section>
+      <div class="section-title">
+        <i class="fas fa-trophy"></i> Achievements
+      </div>
+      <div class="achievement-list">
+        <div class="achievement-item">
+          <i class="fas fa-medal"></i> <strong>First Prize – LangChain Competition</strong>
+          <p style="margin-top: 4px;">Secured 1st prize at <strong>Vivere</strong> for innovative AI application using LangChain.</p>
+        </div>
+        <div class="achievement-item">
+          <i class="fas fa-trophy"></i> <strong>First Prize – HackBuzz</strong>
+          <p style="margin-top: 4px;">Won 1st prize for <strong>Smart Water IoT System</strong>, demonstrating practical IoT for water management.</p>
+        </div>
+        <div class="achievement-item">
+          <i class="fas fa-code"></i> <strong>Active DSA Learner</strong>
+          <p style="margin-top: 4px;">Consistently practicing Data Structures &amp; Algorithms to strengthen problem-solving for technical interviews.</p>
+        </div>
+        <div class="achievement-item">
+          <i class="fas fa-rocket"></i> <strong>Project‑Based Learning</strong>
+          <p style="margin-top: 4px;">Built projects across Web, IoT, Agritech, and AI – blending creativity with technology.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section style="border-bottom: none; padding-bottom: 60px;">
+      <div class="section-title">
+        <i class="fas fa-paper-plane"></i> Let’s Connect
+      </div>
+      <div class="contact-info">
+        <a href="mailto:varshavijayaragavan28@gmail.com"><i class="fas fa-envelope"></i> varshavijayaragavan28@gmail.com</a>
+        <a href="https://github.com/varsha01280" target="_blank"><i class="fab fa-github"></i> github.com/varsha01280</a>
+        <a href="https://www.linkedin.com/in/varsha-vijayaragavan-009707326/" target="_blank"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- footer (optional) -->
+  <footer style="background: #f0f5ff; padding: 24px 0; text-align: center; border-top: 1px solid #dae2f5;">
+    <p style="color: #2a3b66; font-size: 0.95rem;">&copy; 2026 Varsha Vijayaragavan · built with ❤️</p>
+  </footer>
+
+</body>
+</html>

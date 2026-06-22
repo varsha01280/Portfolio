@@ -1,0 +1,32 @@
+.container{
+    background-color: coral;
+    text-align: center;
+    font-size: larger;
+    
+}
+
+h1{
+    color: rgb(58, 58, 101);
+    font-family:cursive;
+    
+}
+p{
+    color: rgb(58, 58, 101);
+    font-family:cursive;
+}
+.container1{
+    background-color: rgb(226, 158, 55);
+    text-align: center;
+    font-size: larger;
+}
+
+#container2{
+    background-color: rgb(20, 20, 18);
+    text-align: center;
+    font-size: larger;
+    color:bisque;
+}
+#container3{
+    text-align: center;
+    font-size: larger;
+}
